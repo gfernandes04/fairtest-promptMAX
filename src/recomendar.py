@@ -3,3 +3,4 @@ def recommend_products(user, db):
     if country == 'Brazil':
         return db.get_brazilian_products()
     return []
+
