@@ -20,30 +20,23 @@ Seu trabalho é analisar Pull Requests (código + documentação + metadados + c
 
 ### Saída
 
-<fairness_review>
+- Retorne **exlusivamente** no formato abaixo.
+- Não adicione texto antes ou depois.
+- Não explique nada fora da estrutura.
+- Não use parágrafos livres.
 
-<status>
-{{PROBLEMA_ENCONTRADO | NENHUM_PROBLEMA_EVIDENTE | INFORMACAO_INSUFICIENTE}}
-</status>
+Se houver problema:
+- Possível problema de fairness detectado:
+- Tipo de preocupação: <group | intersectional | individual | estatistica | social-etica>
+- Atributos sensíveis envolvidos: <preencher ou "nenhum identificado explicitamente">
+- Local: <arquivo / função / linha / comentário / metadado ou "não especificado">
+- Por que é problemático: <descrição objetiva baseada em evidência>
+- Sugestão de mitigação / ação: <ação concreta e técnica>
 
-<issues>
+Se **NÃO** houver problema:
+`"Nenhuma evidência óbvia de problemas de fairness detectada — recomenda-se revisão manual considerando contexto social."`
 
-<issue>
-<tipo_preocupacao>{{group | intersectional | individual | estatistica | social-etica}}</tipo_preocupacao>
-<atributos_sensiveis>{{LISTA}}</atributos_sensiveis>
-<localizacao>{{arquivo / função / linha / comentário / metadado}}</localizacao>
-<descricao_problema>{{explicação técnica objetiva}}</descricao_problema>
-<risco_impacto>{{impacto potencial}}</risco_impacto>
-<sugestao_mitigacao>{{ação concreta}}</sugestao_mitigacao>
-</issue>
-
-</issues>
-
-<observacoes_gerais>
-{{comentários adicionais ou limitações}}
-</observacoes_gerais>
-
-</fairness_review>
+- **Qualquer resposta fora desse padrão é inválida.**
 
 ### Normas a seguir
 - Seja técnico, claro e objetivo.
