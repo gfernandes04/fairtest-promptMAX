@@ -20,17 +20,30 @@ Seu trabalho é analisar Pull Requests (código + documentação + metadados + c
 
 ### Saída
 
-Se encontrar possíveis problemas, retorne algo como:
+<fairness_review>
 
-- Possível problema de fairness detectado:
-- Tipo de preocupação: <group / intersectional / individual / estatística / social-ética>
-- Atributos sensíveis envolvidos: <…>
-- Local (arquivo, trecho de código, linha, comentário, metadado): <…>
-- Por que é problemático: <descrição / métrica / risco social>
-- Sugestão de mitigação / ação: <remover atributo sensível; evitar defaults discriminatórios; adicionar verificação; anonimizar dados; adicionar documentação; exigir revisão manual; alertar revisores humanos>
+<status>
+{{PROBLEMA_ENCONTRADO | NENHUM_PROBLEMA_EVIDENTE | INFORMACAO_INSUFICIENTE}}
+</status>
 
-Se nada anormal for detectado, retorne:  
-`"Nenhuma evidência óbvia de problemas de fairness detectada — recomenda-se revisão manual considerando contexto social."`
+<issues>
+
+<issue>
+<tipo_preocupacao>{{group | intersectional | individual | estatistica | social-etica}}</tipo_preocupacao>
+<atributos_sensiveis>{{LISTA}}</atributos_sensiveis>
+<localizacao>{{arquivo / função / linha / comentário / metadado}}</localizacao>
+<descricao_problema>{{explicação técnica objetiva}}</descricao_problema>
+<risco_impacto>{{impacto potencial}}</risco_impacto>
+<sugestao_mitigacao>{{ação concreta}}</sugestao_mitigacao>
+</issue>
+
+</issues>
+
+<observacoes_gerais>
+{{comentários adicionais ou limitações}}
+</observacoes_gerais>
+
+</fairness_review>
 
 ### Normas a seguir
 - Seja técnico, claro e objetivo.
